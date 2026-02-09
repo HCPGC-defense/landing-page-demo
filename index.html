@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProtectCityParkGolfCourseBR.org</title>
+  <meta name="description" content="Save historic City Park Golf Course — updates, actions, and ways to help." />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header role="banner" class="site-header">
+    <div class="container">
+      <h1 class="site-title">ProtectCityParkGolfCourseBR.org</h1>
+      <p class="lead">Please help SAVE historic CITY park GOLF course BR !!</p>
+    </div>
+  </header>
+
+  <main role="main" class="content container">
+    <section aria-labelledby="alert-heading" class="alert">
+      <h2 id="alert-heading">Attention: EBR Parish Citizens. Historic City Park Golf Course Baton Rouge is under attack !!</h2>
+      <p class="notice">We need your help. Please read the actions below and sign up for updates.</p>
+
+      <ol class="actions" aria-label="Action steps">
+        <li>Get on our mailing list for updates and action plans.</li>
+        <li>Understand there is a cabal at play trying to steal land at City Park Golf Course Baton Rouge.</li>
+        <li>Educate yourself how BREC and BRAF are manipulating public opinion by launching a survey to reimagine what is needed for improving City Park.</li>
+        <li>Follow our guide to help complete the BREC survey without sabotaging City Park Golf Course (i.e. follow the good-citizen playbook).</li>
+        <li>The clock is ticking. We have about three weeks to stop the golf course land grab.</li>
+        <li>Go to our website and come back soon; we plan to have weekly updates.</li>
+        <li>Remember, please please, send us your email contacts so that we can keep you informed.</li>
+      </ol>
+
+      <section class="signup" aria-labelledby="signup-heading">
+        <h3 id="signup-heading">Join our mailing list</h3>
+        <form id="signup-form" action="#" method="post" novalidate>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <button type="submit">Sign up</button>
+          <p class="form-note">This form is a placeholder — replace the action with your mailing-list endpoint (Mailchimp, Netlify Forms, Formspree, etc.).</p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> ProtectCityParkGolfCourseBR.org — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small helper: set current year and simple form handler placeholder
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('signup-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('email').value.trim();
+      if (!email) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      // Replace this with real submission logic.
+      alert('Thanks — this is a demo form. Replace with your mailing-list endpoint.');
+      document.getElementById('signup-form').reset();
+    });
+  </script>
+</body>
+</html>
