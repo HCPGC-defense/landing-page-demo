@@ -190,3 +190,17 @@ button:focus {
   .content { padding: 1rem; }
 }
 
+.email-link {
+  color: inherit;           /* keep text color or set a color */
+  text-decoration: underline;
+  text-decoration-color: currentColor; /* match color */
+  text-underline-offset: 2px;          /* spacing */
+  font-weight: 600;        /* optional emphasis */
+}
+
+.email-link:hover,
+.email-link:focus {
+  text-decoration-thickness: 2px;     /* stronger underline on hover/focus */
+  outline: none;
+}
+
