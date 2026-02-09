@@ -27,6 +27,17 @@ body {
   justify-content: center;
 }
 
+/* Full-page background from assets/Hole_Six.png */
+body {
+  background-image: url("../assets/Hole_Six.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg); /* fallback */
+}
+
+
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -145,3 +156,37 @@ button:focus {
   input[type="email"] { flex: 1; margin-bottom: 0; }
   button { flex: 0 0 auto; }
 }
+
+.site-header {
+  position: relative;
+  background-image: url("../assets/Hole_Six.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 1.5rem 1rem;
+}
+
+.site-header .container { position: relative; z-index: 2; }
+
+.site-title {
+  font-size: 1.5rem; /* default desktop size */
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+}
+
+.lead {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1rem; /* default desktop size */
+  letter-spacing: 0.02em;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .site-header { padding: 1rem; }
+  .site-title { font-size: 1.125rem; } /* smaller on phones */
+  .lead { font-size: 0.9rem; }         /* smaller on phones */
+  .content { padding: 1rem; }
+}
+
