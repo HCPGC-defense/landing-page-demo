@@ -68,6 +68,7 @@ body {
 
 /* Main content */
 .content {
+  min-height: 100vh; /* ensures container is at least full viewport height */
   background: var(--container);
   border-radius: var(--radius);
   padding: 1.25rem;
