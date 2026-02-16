@@ -70,7 +70,7 @@ body {
 
 /* Main content */
 .content {
-  min-height: 100vh; /* ensures container is at least full viewport height */
+  height: auto; /* changed from min-height: 100vh; /* ensures container is at least full viewport height */
   background: var(--container);
   border-radius: var(--radius);
   padding: 1.25rem;
@@ -209,3 +209,26 @@ button:focus {
   outline: none;
 }
 
+/* Improved list readability */
+.actions {
+  line-height: 1.8;  /* More space between list items */
+  color: var(--text);
+  margin: 0 0 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.actions li {
+  margin-bottom: 1rem;  /* Increased from 0.5rem for better spacing */
+}
+
+/* Better link readability in list items */
+.actions a {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
