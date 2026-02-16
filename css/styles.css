@@ -18,6 +18,7 @@ html,body { height: 100%; }
 
 /* Layout */
 body {
+  min-height: 100vh; /* ensures container is at least full viewport height */
   background: var(--bg);
   color: var(--text);
   line-height: 1.45;
@@ -39,6 +40,7 @@ body {
 
 
 .container {
+  min-height: 100vh; /* ensures container is at least full viewport height */
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -88,12 +90,14 @@ body {
 
 /* Actions list */
 .actions {
+  min-height: 100vh; /* ensures container is at least full viewport height */
   margin: 0 0 1rem 1.25rem;
   color: var(--text);
   margin-bottom: 1rem;
 }
 
 .actions li {
+  min-height: 100vh; /* ensures container is at least full viewport height */
   margin-bottom: 0.5rem;
 }
 
