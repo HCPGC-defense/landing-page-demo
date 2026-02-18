@@ -1,251 +1,177 @@
-:root {
-  --screen-width: 320px;
-  --screen-height: 560px;
-  --header-bg-color: #673AB7;
-  --splash-bg-color: #368887;
+:root{
+  --screen-width: 1100px;
+  --screen-height: 760px;
+  --header-bg-color:#673AB7;
+  --splash-bg-color:#368887;
+  --thumb-small:120px;
+  --thumb-medium:130px;
+  --thumb-large:140px;
+  --gap:20px;
+  --mobile-break:640px;
 }
 
-/* Main Navigation Menu */
-.nav__toggle {
-  display: inline-block;
-  position: absolute;
-  z-index: 10;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  outline: 0;
-  right: 15px;
-  top: 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.15s linear;
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color:#D7D7D7;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+  -webkit-font-smoothing:antialiased;
 }
 
-.nav__toggle:hover,
-.nav__toggle:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+/* App viewport */
+.viewport{
+  width:var(--screen-width);
+  max-width:100%;
+  height:var(--screen-height);
+  max-height:100%;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
 }
 
-.nav__menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: var(--screen-height);
-  position: relative;
-  z-index: 5;
-  visibility: hidden;
+/* Header & nav toggle */
+.header{height:5rem;background:var(--header-bg-color);position:relative}
+.nav__toggle{
+  position:absolute;
+  right:15px;
+  top:15px;
+  z-index:10;
+  background:transparent;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  border-radius:50%;
+}
+.nav__toggle:hover,.nav__toggle:focus{background:rgba(0,0,0,0.18)}
+.menuicon{width:50px;height:50px;display:block;cursor:pointer;color:white;transition:transform .3s}
+.menuicon__bar,.menuicon__circle{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}
+
+/* Off-canvas nav menu */
+.nav__menu{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  height:var(--screen-height);
+  position:relative;
+  z-index:5;
+  visibility:hidden;
+}
+.nav--open .nav__menu,
+.nav:target .nav__menu{visibility:visible}
+
+.nav__link{
+  color:#fff;
+  display:block;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:1.25rem;
+  text-decoration:none;
+  padding:1rem;
+}
+.nav__link:hover,.nav__link:focus{background:rgba(0,0,0,0.2)}
+
+/* Splash effect */
+.splash{position:absolute;top:40px;right:40px;width:1px;height:1px}
+.splash::after{
+  content:"";
+  display:block;
+  position:absolute;
+  border-radius:50%;
+  background-color:var(--splash-bg-color);
+  width:284vmax;height:284vmax;
+  top:-142vmax;left:-142vmax;
+  transform:scale(0);transform-origin:50% 50%;
+  transition:transform .5s cubic-bezier(0.755,0.05,0.855,0.06);
+}
+.nav--open > .splash::after,.nav:target > .splash::after{transform:scale(1)}
+
+/* Main content */
+.main{padding:20px;flex:1;overflow:auto;display:flex;flex-direction:column;align-items:stretch}
+
+/* Heading */
+#content{width:100%}
+#content h1{
+  text-align:center;
+  margin:0 auto 18px;
+  max-width:900px;
+  padding:0 16px;
+  font-size:1.15rem;
+  line-height:1.35;
 }
 
-.nav__item {
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.000, 0.995, 0.990, 1.000) 0.3s;
+/* Gallery layout (desktop-first) */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-medium), 1fr));
+  grid-auto-rows: var(--thumb-medium);
+  gap:var(--gap);
+  align-items:start;
 }
 
-.nav__item:nth-child(1) {
-  transform: translateY(-40px);
+/* Generic thumbnail */
+.gallery__item{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background-color:#D8D8D8;
+  border-radius:6px;
+  border:2px solid rgba(0,0,0,0.06);
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  text-decoration:none;
 }
-.nav__item:nth-child(2) {
-  transform: translateY(-80px);
-}
-.nav__item:nth-child(3) {
-  transform: translateY(-120px);
-}
-.nav__item:nth-child(4) {
-  transform: translateY(-160px);
-}
-.nav__item:nth-child(5) {
-  transform: translateY(-200px);
-}
+.gallery__item img{width:100%;height:100%;object-fit:cover;display:block}
 
-.nav__link {
-  color: white;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 1.25rem;
-  text-decoration: none;
-  padding: 1rem;
-}
+/* Hover/focus */
+.gallery__item:hover,.gallery__item:focus{background-color:#A4A4A4;transform:translateY(-2px);transition:transform .15s}
 
-.nav__link:hover,
-.nav__link:focus {
-  outline: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-}
+/* Desktop-only: vertically center the Live Oak thumbnail
+   Add class="gallery__item live-oak" to the Live Oak anchor */
+.gallery__item.live-oak{display:flex;align-items:center;justify-content:center}
+.gallery__item.live-oak img{width:auto;height:90%;object-fit:none}
 
-/* SVG Menu Icon */
-.menuicon {
-  display: block;
-  cursor: pointer;
-  color: white;
-  transform: rotate(0deg);
-  transition: 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
+/* Mobile responsive adjustments */
+@media (max-width: var(--mobile-break)) {
+  /* Nav menu taller on phones and larger text for tappability */
+  .nav__menu{height:100vh}
+  .nav__link{font-size:1.4rem;letter-spacing:4px;padding:1.15rem}
 
-.menuicon__bar,
-.menuicon__circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 3;
-  stroke-linecap: round;
-}
+  /* Background scaling tweak (if you use body background-image elsewhere) */
+  body{background-size:auto 100%;background-attachment:scroll}
 
-.menuicon__bar {
-  transform: rotate(0deg);
-  transform-origin: 50% 50%;
-  transition: transform 0.25s ease-in-out;
-}
-
-.menuicon__circle {
-  transition: stroke-dashoffset 0.3s linear 0.1s;
-  stroke-dashoffset: 144.513; /* circumference of circle with r=23 */
-  stroke-dasharray: 144.513;
-}
-
-/* Circular Splash Background */
-.splash {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 1px;
-  height: 1px;
-}
-
-.splash::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  background-color: var(--splash-bg-color);
-  width: 284vmax;
-  height: 284vmax;
-  top: -142vmax;
-  left: -142vmax;
-  transform: scale(0);
-  transform-origin: 50% 50%;
-  transition: transform 0.5s cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  will-change: transform;
-}
-
-/* Active State */
-.nav:target,
-.nav--open > .splash::after {
-  transform: scale(1);
-}
-
-.nav:target .menuicon,
-.nav--open .menuicon {
-  color: white;
-  transform: rotate(180deg);
-}
-
-.nav:target .menuicon__circle,
-.nav--open .menuicon__circle {
-  stroke-dashoffset: 0;
-}
-
-.nav:target .menuicon__bar:nth-child(1),
-.nav:target .menuicon__bar:nth-child(4),
-.nav--open .menuicon__bar:nth-child(1),
-.nav--open .menuicon__bar:nth-child(4) {
-  opacity: 0;
-}
-
-.nav:target .menuicon__bar:nth-child(2),
-.nav--open .menuicon__bar:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.nav:target .menuicon__bar:nth-child(3),
-.nav--open .menuicon__bar:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.nav:target .nav__menu,
-.nav--open .nav__menu {
-  visibility: visible;
-}
-
-.nav:target .nav__item,
-.nav--open .nav__item {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Demo Styles */
-body {
-  background-color: #D7D7D7;
-  font-family: 'Roboto';
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.viewport {
-  width: var(--screen-width);
-  height: var(--screen-height);
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  background-color: white;
-}
-
-.header {
-  height: 5rem;
-  background-color: var(--header-bg-color);
-}
-
-.main {
-  padding: 20px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  grid-auto-rows: 130px;
-  grid-gap: 20px;
-}
-
-.gallery__item {
-  height: 100%;
-  background-color: #D8D8D8;
-}
-
-.gallery__item:hover,
-.gallery__item:focus {
-  background-color: #A4A4A4;
-}
-
-/* center the h1 text */
-#content h1 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px; /* optional: limit line length */
-  padding: 0 16px;  /* optional: horizontal padding on small screens */
-}
-
-@media (max-width:640px) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    justify-items: center;
-    gap: 12px;
+  /* Gallery becomes compact; fixed-size thumbnails centered */
+  .gallery{
+    grid-template-columns: repeat(auto-fit, minmax(var(--thumb-small), 1fr));
+    grid-auto-rows: var(--thumb-small);
+    justify-items:center;
+    gap:12px;
   }
+  .gallery__item{width:var(--thumb-small);height:var(--thumb-small)}
 
-  .gallery__item {
-    width: 120px;
-    height: 120px;
+  /* QR tile: span full row and be centered on small screens.
+     Ensure the QR anchor has class="gallery__item qr" in your HTML. */
+  .gallery__item.qr{
+    grid-column: 1 / -1;
+    justify-self:center;
+    width:var(--thumb-large);
+    height:var(--thumb-large);
   }
-
-  .gallery__item.qr {
-    grid-column: 1 / -1; /* make QR occupy full row so it's centered */
-    justify-self: center;
-    width: 140px;
-    height: 140px;
-  }
-
-  .gallery__item img { width:100%; height:100%; object-fit:cover; display:block; }
 }
+
+/* Ensure QR class doesn't alter desktop layout */
+@media (min-width: calc(var(--mobile-break) + 1px)) {
+  .gallery__item.qr{grid-column:auto;justify-self:auto;width:100%;height:100%}
+}
+
+/* Accessibility focus */
+.gallery__item:focus{outline:3px solid rgba(102,51,153,0.25);outline-offset:2px}
+
