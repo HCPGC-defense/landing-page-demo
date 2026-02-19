@@ -1,0 +1,107 @@
+/* Container */
+.container{
+  max-width:var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.site-header{padding:1rem 0}
+.site-title{margin:.2rem 0;font-size:1.25rem}
+.lead{margin:0 0 0.5rem 0;color:#333}
+
+.alert{padding:1rem 0}
+.alert h2{font-size:1.05rem;margin:0 0 .5rem;color:#222}
+.notice{margin:0 0 1rem;font-weight:600;color:var(--accent)}
+
+/* action list */
+.actions{padding-left:1.25rem}
+.actions li{margin:0.75rem 0}
+
+a{color:var(--link)}
+a.button{display:inline-block;padding:.45rem .7rem;background:var(--card-bg);border-radius:6px;text-decoration:none;color:var(--link);font-weight:600}
+
+/* Gallery layout */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr; /* stack on small screens */
+  gap:1rem;
+  margin:1rem 0;
+  align-items:start;
+}
+
+/* Each gallery item is a figure with image and caption/comment */
+.gallery__item{
+  display:block;
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  text-decoration:none;
+  color:inherit;
+}
+
+.gallery__item img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;         /* keep images filling container */
+  max-height: calc(100vh - 160px); /* keep phone-fit sensible */
+}
+
+.gallery__meta{
+  padding:.6rem;
+  background:rgba(255,255,255,0.9);
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+
+.gallery__title{
+  font-size:0.95rem;
+  font-weight:600;
+  margin:0;
+  color:#111;
+  word-break:break-word;
+}
+
+/* Comment field styling */
+.comment{
+  width:100%;
+  border:1px solid #e0e0e0;
+  border-radius:6px;
+  padding:.5rem;
+  font-size:0.95rem;
+  resize:vertical;
+  min-height:48px;
+  background:#fff;
+}
+
+.comment-row{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+}
+
+.comment-submit{
+  padding:.45rem .6rem;
+  background:var(--link);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* Responsive: larger screens show multi-column grid */
+@media (min-width:600px){
+  .gallery{ grid-template-columns: 1fr 1fr; }
+}
+@media (min-width:1000px){
+  .gallery{ grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* small helpers */
+.muted{color:#666;font-size:.95rem}
+.center{display:flex;align-items:center;justify-content:center}
