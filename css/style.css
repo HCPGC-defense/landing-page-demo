@@ -35,7 +35,7 @@
   z-index: 5;
   visibility: hidden;
   font-family: "Helvetica", Arial, sans-serif;
-  font-size: 12pt;
+  font-size: 14pt;
 }
 
 .nav__item {
@@ -65,15 +65,17 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   text-decoration: none;
   padding: 1rem;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 14pt;
 }
 
 .nav__link:hover,
 .nav__link:focus {
   outline: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(55, 131, 32, 0.8);
 }
 
 /* SVG Menu Icon */
