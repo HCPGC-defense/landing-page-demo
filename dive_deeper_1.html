@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Take A Mulligan and Dive Deeper Into the Shenanigans of BREC, BRAF, and Historic City Park in Baton Rouge</title>
 
     <style>
@@ -58,6 +58,25 @@
         /* Quick override if other styles are forcing smaller text */
         #content p, body p {
           font-size: 1rem !important;
+        }
+
+        html, body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body {
+          font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+          font-size: 20px;      /* increase this if needed */
+          line-height: 1.6;
+        }
+        
+        /* paragraphs */
+        p {
+          font-size: 1.05rem;   /* scales from body; ≈21px when body=20px */
+          margin-bottom: 1rem;
+        }
+        
+        /* extra boost on narrow phones */
+        @media (max-width: 420px) {
+          body { font-size: 22px; }
+          p { font-size: 1.05rem; }
         }
 
 
