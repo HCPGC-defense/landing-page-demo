@@ -14,6 +14,70 @@
       background-position: center;
     }
   </style>
+  <style>
+  /* Page-only layout fixes (apply only to this page) */
+
+  /* Ensure mobile-first single column */
+  .container,
+  .container .pane,
+  #content table,
+  #content td {
+    box-sizing: border-box;
+    width: 100% !important;      /* force full width on narrow screens */
+    max-width: 100% !important;
+    display: block !important;   /* prevent side-by-side table/cell behavior on small screens */
+  }
+
+  /* Make media responsive so large images won't expand layout */
+  .container video,
+  #content video,
+  .gallery img,
+  .gallery .gallery__item img,
+  #content img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block;
+  }
+
+  /* Keep table layout stacked on narrow viewports */
+  @media (min-width: 768px) {
+  /* Re-enable two-column layout on wider screens if desired */
+  .container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .container .pane { display: block; }
+  #content table { display: table; width: 100%; }
+  #content td { display: table-cell; vertical-align: top; width: 50%; }
+  }
+
+  /* Prevent background image or large PNG from forcing huge width */
+  body, .viewport, #content {
+  max-width: 100%;
+  overflow-x: hidden;
+  }
+
+  /* Optional: make headings wrap nicely */
+  #content h1, #content h3, #content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* larger menu font just for this page */
+#menu,
+#menu .nav__link {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.nav__toggle .menuicon text,
+.nav__toggle .menuicon {
+  font-size: 22px;
+}
+
+@media (max-width: 480px) {
+  #menu .nav__link { font-size: 22px; }
+}
+</style>
+
 </head>
 <body>
   <div class="viewport">
@@ -21,7 +85,7 @@
       <nav id="nav" class="nav" role="navigation">
         
         <!-- ACTUAL NAVIGATION MENU -->
-        <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
+        <!-- <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
           <li class="nav__item"><a href="home.html" class="nav__link">Home - Click Here To Get Started</a></li>
           <li class="nav__item"><a href="two_minute_read.html" class="nav__link">The Short Look - Click Here for the 2-minute Readout</a></li>
           <li class="nav__item"><a href="https://protectcityparkgolfcoursebr.fillout.com/letsgo" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:#0066cc;font-weight:600;font-size:18px;">Launch citizen webform to receive text alerts or email (Your Choice)</a></li>
@@ -32,7 +96,21 @@
           <li class="nav__item"><a href="#" class="nav__link">Blog (comming soon)</a></li>
           <li class="nav__item"><a href="#" class="nav__link">About (comming soon)</a></li>
           <li class="nav__item"><a href="#" class="nav__link">Contact (comming soon)</a></li>
+        </ul> -->
+
+        <ul class="nav__menu" id="menu" tabindex="-1" aria-label="Main navigation" hidden>
+        <li class="nav__item"><a href="home.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="two_minute_read.html" class="nav__link">2‑Minute Read</a></li>
+        <li class="nav__item"><a href="https://protectcityparkgolfcoursebr.fillout.com/letsgo" target="_blank" rel="noopener noreferrer" class="nav__link nav__cta">Sign up for Alerts</a></li>
+        <li class="nav__item"><a href="how_to_help.html" class="nav__link">How You Can Help</a></li>
+        <li class="nav__item"><a href="dive_deeper_0.html" class="nav__link">Short Background</a></li>
+        <li class="nav__item"><a href="dive_deeper_1.html" class="nav__link">More Detailed Background</a></li>
+        <li class="nav__item"><a href="BREC_survey_guide.html" class="nav__link">BREC Survey Guide</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Blog (coming soon)</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About (coming soon)</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Contact (coming soon)</a></li>
         </ul>
+
         
         <!-- MENU TOGGLE BUTTON -->
         <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
@@ -61,11 +139,22 @@
     <main class="main" role="main">
       <div id="content">
         <h1>Welcome to our quest to Protect City Park Golf Course Baton Rouge. Get informed. Get Involved. Click the GREEN dot to expand the menu options. Scroll down to copy our Meme's. Help us get viral. Let's go!!</h1>
-        <video width="320" height="240" autoplay loop controls>
-        <source src="assets/VIDEO_MP4_STOP_BREC_FROM_CLOSING_CITY_PARK_GOLF_COURSE_v1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-        </video>
-        
+
+        <div class="container">
+        <div class="pane pane1">
+           <video width="320" height="240" autoplay loop controls>
+            <source src="assets/VIDEO_MP4_STOP_BREC_FROM_CLOSING_CITY_PARK_GOLF_COURSE_v1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="pane pane2">
+            <h3 style="color:#c00">NEXT BREC COMMISSION MEETING IS FEB 26th, 2026 AT 5PM (BREC MAIN OFFICE: 6201 Florida Blvd, Baton Rouge, LA 70806</h3>
+            <p style="color:#c00">WE HAVE AN URGENT NEED FOR CITIZENS TO SHOW UP AND DEMAND CITY PARK GOLF COURSE IS NOT DESTROYED. PLEASE WRITE EMAILS TO EVERY BREC COMMISSIONER IN ADVANCE TO SUPPORT GOLF.</p>
+            <p></p>
+            <h3 style="color:#c00">THE BIASED BREC SURVEY AGAINST GOLF IS DUE BY WEDNESDAY FEB 25th, 2026</h3>
+            <p style="color:#c00">PLEASE READ OUR GUIDANCE ON THIS WEBSITE BEFORE COMPLETING THE BREC SURVEY. PLEASE SUPPORT GOLF. DEMAND BREC KEEP GOLF AS IS. NO REDUCTIONS. ASK FOR OTHER RECREATION TO BE DEVELOPED ONLY ON UNUSED LAND OUTSIDE OF GOLF SCOPE.</p></div>
+        </div>
+       
         <h1>STEP 1. Read about the problem.  BREC may vote in one week to close CITY PARK GOLF COURSE FOREVER.</h1>
         <h1>STEP 2. There is a BREC public survey about CITY PARK.  We urgently need citzens to complete BREC's survey, with a keen eye to favor golf and write-in "Keep 100% GOLF footprint at CITY PARK. DO NOT CLOSE or reduce golf course size".</h1>
         <h1>STEP 3. The BREC survey is designed with a BIAS.  Please find our menu (top left corner, green button).  Go to the menu item labled "Our Guidance on the biased BREC survey".</h1>
@@ -82,7 +171,7 @@
         <h1>STEP 5. Look deeper into all the links in the menu (Green Button, top left). The backstory is very interesting. Over the top, yes we admit, but PERMANENT CLOSURE OF THE GOLF COURSE IS IMMINENT if you do not complete the BREC survey and get involved with our group. Be kind and monitor our website. We will have updates. We need your support to amplify our message on social media, email to people you know. Please voice your support everywhere in Baton Rouge to STOP BREC FROM CLOSING CITY PARK GOLF COURSE.</h1>
         <h1>STEP 6. Remember. If you ignore the BREC survey. BREC will simply massively cut the golf course size 50% to 70% or worse PERMANENTLY CLOSE CITY PARK GOLF COURSE completely.</h1>
         <h1>STEP 7. Familiarize yourself with the long history of the Historic 100 year old CITY PARK GOLF COURSE at another civic group, <a href="https://www.cityparkfriendsbatonrouge.org" target="_blank" rel="noopener noreferrer">FRIENDS OF CITY PARK BATON ROUGE</a>. They do great work too.</h1>
-        <h1>STEP 8. BREC has a public meeting on this topic this THURSDAY FEB 26th at 5PM. We urge you to attend the meeting.  Your physical presence will make a huge difference to STOP BREC FROM CLOSING CITY PARK GOLF COURSE.</h1>
+        <h1>STEP 8. BREC has a public meeting on this topic this THURSDAY FEB 26th, 2026 at 5PM (BREC MAIN OFFICE 6201 Florida Blvd, Baton Rouge, LA 70806). We urge you to attend the meeting.  Your physical presence will make a huge difference to STOP BREC FROM CLOSING CITY PARK GOLF COURSE.</h1>
         <h1>STEP 9. We have social media meme's, slides, and photos below.  You can copy paste, email or text your friends. Please post these items on any social media you have access to. Spread the word and save the golf course. Text important people with support for the course. Encourage them to take action by pointing them to our website.</h1>
         <h1>STEP 10. We SUPPORT CITY PARK GOLF COURSE. We hope you will too.  Thank you. We also support all the other activities at city park, but we need your decisive action to SAVE CITY PARK GOLF COURSE from BREC's plans to destroy it on its 100th Anniversary.</h1>
       </div> 
