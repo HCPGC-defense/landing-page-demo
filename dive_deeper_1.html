@@ -62,6 +62,37 @@
           display: block !important;
         }
 
+        /* Portrait (phone held vertically) — normal flow */
+        @media (orientation: portrait) {
+        body { font-size: 18px; }
+        /* default layout for portrait */
+        }
+        
+            /* Landscape (phone rotated horizontally) — larger text or different layout */
+                @media (orientation: landscape) {
+                body { font-size: 20px; }
+        
+          /* If you want to rotate a specific element (not recommended for whole document),
+             apply a transform to that element only. Example for paragraphs: */
+            p.rotate-on-landscape {
+            transform: rotate(0deg);            /* default if you don't want rotation */
+            transform-origin: left top;
+          }
+        
+          /* Example: visually rotate a heading 90deg when landscape */
+              h1.rotate-landscape {
+                transform: rotate(90deg);
+                transform-origin: left top;
+                display: inline-block;              /* transform needs an inline/block element */
+                white-space: nowrap;
+          }
+            }
+        
+            /* Prefer smooth transition */
+            .rotate-landscape, .rotate-on-landscape {
+              transition: transform 200ms ease, font-size 150ms ease;
+            }
+
     </style>
 </head>
 <body>
