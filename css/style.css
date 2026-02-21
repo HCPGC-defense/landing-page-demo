@@ -225,6 +225,7 @@ body {
 
 .pane {
     flex: 1; /* Each pane takes equal space */
+    color: red;
 }
 
 .gallery {
