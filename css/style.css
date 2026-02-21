@@ -219,6 +219,14 @@ body {
   padding: 20px;
 }
 
+.container {
+    display: flex; /* Use flexbox for desktop layout */
+}
+
+.pane {
+    flex: 1; /* Each pane takes equal space */
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -246,6 +254,14 @@ body {
 }
 
 @media (max-width:640px) {
+    .container {
+        display: block; /* Stack panes vertically on mobile */
+    }
+    
+    .pane {
+        width: 100%; /* Full width for mobile panes */
+    }
+  
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
