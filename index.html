@@ -14,6 +14,54 @@
       background-position: center;
     }
   </style>
+  <style>
+  /* Page-only layout fixes (apply only to this page) */
+
+  /* Ensure mobile-first single column */
+  .container,
+  .container .pane,
+  #content table,
+  #content td {
+    box-sizing: border-box;
+    width: 100% !important;      /* force full width on narrow screens */
+    max-width: 100% !important;
+    display: block !important;   /* prevent side-by-side table/cell behavior on small screens */
+  }
+
+  /* Make media responsive so large images won't expand layout */
+  .container video,
+  #content video,
+  .gallery img,
+  .gallery .gallery__item img,
+  #content img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block;
+  }
+
+  /* Keep table layout stacked on narrow viewports */
+  @media (min-width: 768px) {
+  /* Re-enable two-column layout on wider screens if desired */
+  .container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .container .pane { display: block; }
+  #content table { display: table; width: 100%; }
+  #content td { display: table-cell; vertical-align: top; width: 50%; }
+  }
+
+  /* Prevent background image or large PNG from forcing huge width */
+  body, .viewport, #content {
+  max-width: 100%;
+  overflow-x: hidden;
+  }
+
+  /* Optional: make headings wrap nicely */
+  #content h1, #content h3, #content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+</style>
+
 </head>
 <body>
   <div class="viewport">
