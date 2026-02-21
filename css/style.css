@@ -5,7 +5,7 @@
   --splash-bg-color: #368887;
 }
 
-/* Main Navigation Menu */
+<!-- Main Navigation Menu -->
 .nav__toggle {
   display: inline-block;
   position: absolute;
@@ -59,6 +59,7 @@
   transform: translateY(-200px);
 }
 
+<!--
 .nav__link {
   color: white;
   display: block;
@@ -70,7 +71,19 @@
   padding: 1rem;
   font-family: "Helvetica", Arial, sans-serif;
   font-size: 14pt;
-}
+} -->
+
+<!-- Link styling -->
+.nav__link {
+  display: inline-block;
+  padding: 10px 14px;
+  color: #0b2540;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 120ms ease, transform 120ms ease;
+<-- End Link styling -->
 
 .nav__link:hover,
 .nav__link:focus {
@@ -78,7 +91,7 @@
   background-color: rgba(55, 131, 32, 0.8);
 }
 
-/* SVG Menu Icon */
+<!-- SVG Menu Icon -->
 .menuicon {
   display: block;
   cursor: pointer;
@@ -108,7 +121,7 @@
   stroke-dasharray: 144.513;
 }
 
-/* Circular Splash Background */
+<!-- Circular Splash Background -->
 .splash {
   position: absolute;
   top: 40px;
@@ -133,7 +146,7 @@
   will-change: transform;
 }
 
-/* Active State */
+<!-- Active State -->
 .nav:target,
 .nav--open > .splash::after {
   transform: scale(1);
@@ -178,7 +191,7 @@
   transform: translateY(0);
 }
 
-/* Demo Styles */
+<!-- Demo Styles -->
 body {
   background-color: #D7D7D7;
   font-family: 'Roboto';
@@ -223,7 +236,7 @@ body {
   background-color: #A4A4A4;
 }
 
-/* center the h1 text */
+<!-- center the h1 text -->
 #content h1 {
   text-align: center;
   margin-left: auto;
