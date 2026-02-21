@@ -5,6 +5,31 @@
     <title>Take A Mulligan and Dive Deeper Into the Shenanigans of BREC, BRAF, and Historic City Park in Baton Rouge</title>
 
     <style>
+        /* Increase paragraph size (page-only) */
+        body {
+          font-size: 18px;     /* sets root for rem units; adjust 16–20px to taste */
+          line-height: 1.6;
+        }
+        
+        /* Make all paragraphs larger and readable */
+        p {
+          font-size: 1rem;     /* equals body font-size above; change to 1.125rem or 1.125rem for bigger */
+          margin-bottom: 1rem;
+        }
+        
+        /* If you need even bigger on phones */
+        @media (max-width: 480px) {
+          body { font-size: 19px; }         /* increases base for small screens */
+          p { font-size: 1.05rem; }
+        }
+        
+        /* Quick override if other styles are forcing smaller text */
+        #content p, body p {
+          font-size: 1rem !important;
+        }
+
+
+        
         /* Page-only readability fixes */
         html, body { box-sizing: border-box; }
         *, *::before, *::after { box-sizing: inherit; }
