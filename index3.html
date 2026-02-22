@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protect City Park Golf Course</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('assets/Live_Oak_Watercolor.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+  <style>
+  /* Page-only layout fixes (apply only to this page) */
+
+  /* Ensure mobile-first single column */
+  .container,
+  .container .pane,
+  #content table,
+  #content td {
+    box-sizing: border-box;
+    width: 100% !important;      /* force full width on narrow screens */
+    max-width: 100% !important;
+    display: block !important;   /* prevent side-by-side table/cell behavior on small screens */
+  }
+
+  /* Make media responsive so large images won't expand layout */
+  .container video,
+  #content video,
+  .gallery img,
+  .gallery .gallery__item img,
+  #content img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block;
+  }
+
+  /* Keep table layout stacked on narrow viewports */
+  @media (min-width: 768px) {
+  /* Re-enable two-column layout on wider screens if desired */
+  .container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .container .pane { display: block; }
+  #content table { display: table; width: 100%; }
+  #content td { display: table-cell; vertical-align: top; width: 50%; }
+  }
+
+  /* Prevent background image or large PNG from forcing huge width */
+  body, .viewport, #content {
+  max-width: 100%;
+  overflow-x: hidden;
+  }
+
+  /* Optional: make headings wrap nicely */
+  #content h1, #content h3, #content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* larger menu font just for this page */
+#menu,
+#menu .nav__link {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.nav__toggle .menuicon text,
+.nav__toggle .menuicon {
+  font-size: 22px;
+}
+
+@media (max-width: 480px) {
+  #menu .nav__link { font-size: 22px; }
+}
+</style>
+
+</head>
+<body>
+  <div class="viewport">
+    <header class="header" role="banner">
+      <nav id="nav" class="nav" role="navigation">
+        
+        <!-- ACTUAL NAVIGATION MENU -->
+        <!-- <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
+          <li class="nav__item"><a href="home.html" class="nav__link">Home - Click Here To Get Started</a></li>
+          <li class="nav__item"><a href="two_minute_read.html" class="nav__link">The Short Look - Click Here for the 2-minute Readout</a></li>
+          <li class="nav__item"><a href="https://protectcityparkgolfcoursebr.fillout.com/letsgo" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:#0066cc;font-weight:600;font-size:18px;">Launch citizen webform to receive text alerts or email (Your Choice)</a></li>
+          <li class="nav__item"><a href="how_to_help.html" class="nav__link">Click Here To Learn How You Can Help</a></li>
+          <li class="nav__item"><a href="dive_deeper_0.html" class="nav__link">Short Background on the Problem</a></li>    
+          <li class="nav__item"><a href="dive_deeper_1.html" class="nav__link">Detailed Background on the Problem</a></li>
+          <li class="nav__item"><a href="BREC_survey_guide.html" class="nav__link">Our Guidance on the biased BREC Survey</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Blog (comming soon)</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">About (comming soon)</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Contact (comming soon)</a></li>
+        </ul> -->
+
+        <ul class="nav__menu" id="menu" tabindex="-1" aria-label="Main navigation" hidden>
+        <li class="nav__item"><a href="home.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="two_minute_read.html" class="nav__link">2‑Minute Read</a></li>
+        <li class="nav__item"><a href="https://protectcityparkgolfcoursebr.fillout.com/letsgo" target="_blank" rel="noopener noreferrer" class="nav__link nav__cta">Sign up for Alerts</a></li>
+        <li class="nav__item"><a href="how_to_help.html" class="nav__link">How You Can Help</a></li>
+        <li class="nav__item"><a href="dive_deeper_0.html" class="nav__link">Short Background</a></li>
+        <li class="nav__item"><a href="dive_deeper_1.html" class="nav__link">More Detailed Background</a></li>
+        <li class="nav__item"><a href="BREC_survey_guide.html" class="nav__link">BREC Survey Guide</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Blog (coming soon)</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About (coming soon)</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Contact (coming soon)</a></li>
+        </ul>
+
+        
+        <!-- MENU TOGGLE BUTTON -->
+        <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
+          <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="rgba(55, 131, 32, 0.8)">
+            <title>Toggle Menu</title>
+            <g>
+              <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
+              <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+              <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
+              <!-- <circle class="menuicon__circle" r="23" cx="25" cy="25" /> -->
+                <svg width="50" height="50">
+                <circle class="menuicon__circle" r="23" cx="25" cy="25" />
+                <text x="25" y="30" text-anchor="middle" font-size="14" fill="black">Menu</text>
+                </svg>
+            </g>
+          </svg>
+        </a>
+        
+        <!-- ANIMATED BACKGROUND ELEMENT -->
+        <div class="splash"></div>
+        
+      </nav>
+    </header>
+    
+    <!-- DEMO CONTENT -->
+    <main class="main" role="main">
+      <div id="content">
+        <h1>Welcome to our quest to Protect City Park Golf Course Baton Rouge. Get informed. Get Involved. Click the GREEN dot to expand the menu options. Scroll down to copy our Meme's. Help us get viral. Let's go!!<button class="join-button" onclick="window.location.href='https://protectcityparkgolfcoursebr.fillout.com/letsgo'">JOIN US</button></h1>
+
+        <div class="container">
+        <div class="pane pane1">
+           <video style="max-width:240px;width:100%;height:auto;" width="192" height="144" autoplay loop controls>
+            <source src="assets/VIDEO_MP4_STOP_BREC_FROM_CLOSING_CITY_PARK_GOLF_COURSE_v2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="pane pane2">
+            <h1 style="color:#c00">NEXT BREC COMMISSION MEETING IS FEB 26th, 2026 AT 5PM (BREC MAIN OFFICE: 6201 Florida Blvd, Baton Rouge, LA 70806</h1>
+            <h1 style="color:#c00">WE HAVE AN URGENT NEED FOR CITIZENS TO SHOW UP AND DEMAND CITY PARK GOLF COURSE IS NOT DESTROYED. PLEASE WRITE EMAILS TO EVERY BREC COMMISSIONER IN ADVANCE TO SUPPORT GOLF.</h1>
+            <p></p>
+            <h1 style="color:#c00">THE BIASED BREC SURVEY AGAINST GOLF IS DUE BY WEDNESDAY FEB 25th, 2026</h1>
+            <h1 style="color:#c00">PLEASE READ OUR GUIDANCE ON THIS WEBSITE BEFORE COMPLETING THE BREC SURVEY. PLEASE SUPPORT GOLF. DEMAND BREC KEEP GOLF AS IS. NO REDUCTIONS. ASK FOR OTHER RECREATION TO BE DEVELOPED ONLY ON UNUSED LAND OUTSIDE OF GOLF SCOPE.</h1></div>
+        </div>
+       
+        <h1>STEP 1. Read about the problem.  BREC may vote in one week to close CITY PARK GOLF COURSE FOREVER.</h1>
+        <h1>STEP 2. There is a BREC public survey about CITY PARK.  We urgently need citzens to complete BREC's survey, with a keen eye to favor golf and write-in "Keep 100% GOLF footprint at CITY PARK. DO NOT CLOSE or reduce golf course size".</h1>
+        <h1>STEP 3. The BREC survey is designed with a BIAS.  Please find our menu (top left corner, green button).  Go to the menu item labled "Our Guidance on the biased BREC survey".</h1>
+          <div style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;background:#ffa500;position:relative;">
+          <a href="https://www.protectcityparkgolfcoursebr.org/BREC_survey_guide.html" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:#0066cc;font-weight:600;font-size:18px;">Click here to review our Guidance on the biased BREC survey.</a>
+          </div>
+        <h1>STEP 3B. Make certain that you understand the BREC survey BIAS before you complete it. We need as many citizens to SUPPORT GOLF as possible. Understand other choices and selections will cause BREC to favor any other use case. BREC is looking for an excuse to CLOSE THE GOLF COURSE FOREVER. They have been trying for 23 years.  This threat is serious and real.</h1>
+        <h1>STEP 4. If you would kindly let us update you by TEXT ALERT OR EMAIL, please find our signup on our menu. We will respect your privacy. You may unsubscribe at anytime.</h1>
+        
+        <div style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;background:#ffa500;position:relative;">
+        <a href="https://protectcityparkgolfcoursebr.fillout.com/letsgo" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:#0066cc;font-weight:600;font-size:18px;">Click here to sign up for our text alerts and email updates.</a>
+        </div>
+
+        <h1>STEP 5. Look deeper into all the links in the menu (Green Button, top left). The backstory is very interesting. Over the top, yes we admit, but PERMANENT CLOSURE OF THE GOLF COURSE IS IMMINENT if you do not complete the BREC survey and get involved with our group. Be kind and monitor our website. We will have updates. We need your support to amplify our message on social media, email to people you know. Please voice your support everywhere in Baton Rouge to STOP BREC FROM CLOSING CITY PARK GOLF COURSE.</h1>
+        <h1>STEP 6. Remember. If you ignore the BREC survey. BREC will simply massively cut the golf course size 50% to 70% or worse PERMANENTLY CLOSE CITY PARK GOLF COURSE completely.</h1>
+        <h1>STEP 7. Familiarize yourself with the long history of the Historic 100 year old CITY PARK GOLF COURSE at another civic group, <a href="https://www.cityparkfriendsbatonrouge.org" target="_blank" rel="noopener noreferrer">FRIENDS OF CITY PARK BATON ROUGE</a>. They do great work too.</h1>
+        <h1>STEP 8. BREC has a public meeting on this topic this THURSDAY FEB 26th, 2026 at 5PM (BREC MAIN OFFICE 6201 Florida Blvd, Baton Rouge, LA 70806). We urge you to attend the meeting.  Your physical presence will make a huge difference to STOP BREC FROM CLOSING CITY PARK GOLF COURSE.</h1>
+        <h1>STEP 9. We have social media meme's, slides, and photos below.  You can copy paste, email or text your friends. Please post these items on any social media you have access to. Spread the word and save the golf course. Text important people with support for the course. Encourage them to take action by pointing them to our website.</h1>
+        <h1>STEP 10. We SUPPORT CITY PARK GOLF COURSE. We hope you will too.  Thank you. We also support all the other activities at city park, but we need your decisive action to SAVE CITY PARK GOLF COURSE from BREC's plans to destroy it on its 100th Anniversary.</h1>
+      </div> 
+        <div class="gallery" aria-label="gallery">
+      
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_1C_medium2.png" class="gallery__item" title="ProtectCityParkGolfCourseBR_meme_Full_Card_1C_medium2">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_1C_medium2.png" alt="ProtectCityParkGolfCourseBR_meme_Full_Card_1C_medium2">
+        </a>
+
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_2B.png" class="gallery__item" title="ProtectCityParkGolfCourseBR_meme_Full_Card_2B">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_2B.png" alt="ProtectCityParkGolfCourseBR_meme_Full_Card_BA">
+        </a>
+       
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_3A.png" class="gallery__item" title="ProtectCityParkGolfCourseBR_meme_Full_Card_3A">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_3A.png" alt="ProtectCityParkGolfCourseBR_meme_Full_Card_3A">
+        </a>
+
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_QR_Code_wTitles_small2.png" class="gallery__item qr" title="QR Code 2">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_QR_Code_wTitles_small2.png" alt="QR Code 2">
+        </a>  
+          
+        <a href="assets/QR_CODE_v3_CPGC_code_only.png" class="gallery__item qr" title="QR Code">
+        <img src="assets/QR_CODE_v3_CPGC_code_only.png" alt="QR Code">
+        </a>
+          
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_4A.png" class="gallery__item" title="Closed Forever">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_4A.png" alt="Closed Forever">
+        </a>
+
+        <a href="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_5B.png" class="gallery__item" title="Fight Tyranny">
+        <img src="assets/ProtectCityParkGolfCourseBR_meme_Full_Card_5B.png" alt="Fight Tyranny">
+        </a>
+  
+        <a href="assets/Live_Oak_Watercolor.png" class="gallery__item" title="Live Oak">
+        <img src="assets/Live_Oak_Watercolor.png" alt="Live Oak">
+        </a>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const nav = document.querySelector('#nav');
+    const menu = document.querySelector('#menu');
+    const menuToggle = document.querySelector('.nav__toggle');
+    let isMenuOpen = false;
+
+    // TOGGLE MENU ACTIVE STATE
+    menuToggle.addEventListener('click', e => {
+      e.preventDefault();
+      isMenuOpen = !isMenuOpen;
+      
+      menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+      menu.hidden = !isMenuOpen;
+      nav.classList.toggle('nav--open');
+    });
+
+    // TRAP TAB INSIDE NAV WHEN OPEN
+    nav.addEventListener('keydown', e => {
+      if (!isMenuOpen || e.ctrlKey || e.metaKey || e.altKey) {
+        return;
+      }
+      
+      const menuLinks = menu.querySelectorAll('.nav__link');
+      if (e.keyCode === 9) {
+        if (e.shiftKey) {
+          if (document.activeElement === menuLinks[0]) {
+            menuToggle.focus();
+            e.preventDefault();
+          }
+        } else if (document.activeElement === menuToggle) {
+          menuLinks[0].focus();
+          e.preventDefault();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
