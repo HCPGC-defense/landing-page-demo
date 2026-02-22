@@ -253,6 +253,18 @@ body {
   max-width: 900px; /* optional: limit line length */
   padding: 0 16px;  /* optional: horizontal padding on small screens */
 }
+.join-button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+    }
 
 @media (max-width:640px) {
     .container {
